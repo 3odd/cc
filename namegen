@@ -1,0 +1,32 @@
+import random
+        
+def choose_random_element(list1, list2):
+    if random.random() < 0.5:
+        return random.choice(list1)
+    else:
+        return random.choice(list2)
+
+vorname = ['Ekaterina', 'Occidente', 'Percy', 'Gori', 'Andre', 'Kurt', 'Sanguine', 'Bardh', 'Lotario', 'North', 'Gyp', 'Agnetha', 'Christhiane Inocência', 'Clemência', 'Hermione', 'Mariaferro', 'Heimrad']
+
+spitzname = ['Masa', 'Save', 'Nene', 'Tibe', 'Virgi', 'Silvester Holst', 'Gethsemane']
+
+nachname = ['Ossberger', 'Kinski', 'Doppelfeld', 'Christo', 'Heim', 'Cecchino', 'Elbaz-Burke', 'Trego Baker', 'Young', 'Glascoigne','de Saint-Loup', 'Sante-Hildegarde', 'Stuerm']
+
+
+for i in range(12):
+    #1
+    nomi = [random.choice(vorname)]
+    
+    #2
+    if random.random() < 0.2:
+        nomi.append(choose_random_element(vorname, spitzname))
+    
+    #3
+    nomi.append(random.choice(nachname))
+    
+    #4
+    if random.random() < 0.2:
+        nomi.append(random.choice(nachname))
+    
+    
+    print(“ ".join(nomi))
